@@ -230,7 +230,7 @@ class CRM_Report_Form_Event_ParticipantListing extends CRM_Report_Form_Event {
             'options' => CRM_Event_PseudoConstant::participantRole(),
           ),
           'participant_register_date' => array(
-            'title' => 'Registration Date',
+            'title' => ts('Registration Date'),
             'operatorType' => CRM_Report_Form::OP_DATE,
           ),
           'fee_currency' => array(
@@ -389,7 +389,7 @@ class CRM_Report_Form_Event_ParticipantListing extends CRM_Report_Form_Event {
         'title' => ts('Blank column at the End'),
         'type' => 'select',
         'options' => array(
-          '' => '-select-',
+          '' => ts('-select-'),
           1 => ts('One'),
           2 => ts('Two'),
           3 => ts('Three'),
