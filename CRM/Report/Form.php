@@ -448,7 +448,7 @@ class CRM_Report_Form extends CRM_Core_Form {
       if (array_key_exists('civicrm_contact', $this->_columns)) {
         $this->_columns['civicrm_contact']['fields']['exposed_id'] = array(
           'name' => 'id',
-          'title' => 'Contact ID',
+          'title' => ts('Contact ID'),
           'no_repeat' => TRUE,
         );
       }
@@ -1226,13 +1226,13 @@ class CRM_Report_Form extends CRM_Core_Form {
 
           case CRM_Report_Form::OP_DATE:
             // build datetime fields
-            CRM_Core_Form_Date::buildDateRange($this, $fieldName, $count, '_from', '_to', 'From:', FALSE, $operations);
+            CRM_Core_Form_Date::buildDateRange($this, $fieldName, $count, '_from', '_to', ts('From:'), FALSE, $operations);
             $count++;
             break;
 
           case CRM_Report_Form::OP_DATETIME:
             // build datetime fields
-            CRM_Core_Form_Date::buildDateRange($this, $fieldName, $count, '_from', '_to', 'From:', FALSE, $operations, 'searchDate', TRUE);
+            CRM_Core_Form_Date::buildDateRange($this, $fieldName, $count, '_from', '_to', ts('From:'), FALSE, $operations, 'searchDate', TRUE);
             $count++;
             break;
 
@@ -1450,8 +1450,8 @@ class CRM_Report_Form extends CRM_Core_Form {
       for ($i = 1; $i <= 5; $i++) {
         $this->addElement('select', "order_bys[{$i}][column]", ts('Order by Column'), $options);
         $this->addElement('select', "order_bys[{$i}][order]", ts('Order by Order'), array(
-          'ASC' => 'Ascending',
-          'DESC' => 'Descending',
+          'ASC' => ts('Ascending'),
+          'DESC' => ts('Descending'),
         ));
         $this->addElement('checkbox', "order_bys[{$i}][section]", ts('Order by Section'), FALSE, array('id' => "order_by_section_$i"));
         $this->addElement('checkbox', "order_bys[{$i}][pageBreak]", ts('Page Break'), FALSE, array('id' => "order_by_pagebreak_$i"));
